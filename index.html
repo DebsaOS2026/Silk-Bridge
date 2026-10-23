@@ -225,6 +225,32 @@ table.tb2.c{min-width:0}
 .btn .ic{font-size:18px}
 
 /* tabs & segmented */
+.sheet .ph{padding:6px 16px 8px;gap:7px}.sheet .ph .chip{min-width:34px;height:34px;font-size:13px;border-radius:10px}.sheet .ph-t h2{font-size:18px}.sheet .pbtn{width:34px;height:34px}
+.sheet .pf{padding:8px 14px calc(8px + var(--sab))}.sheet .pf .btn{height:40px}.sheet .ps{padding:14px 14px 22px}
+.rsec{padding:6px 0 34px;margin-bottom:30px;border-bottom:1px dashed #DCD3BD;scroll-margin-top:8px}
+.rsec:last-child{border-bottom:0}
+.rhead{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.rhead .chip{min-width:46px;height:46px;font-size:16px;border-radius:14px}
+.rhead small{display:block;font-size:12px;color:var(--gold);font-weight:700}
+.rhead h2{font-family:var(--fd);font-size:clamp(21px,2.4vw,27px);color:var(--g8);line-height:1.25}
+html[lang=en] .rhead h2{font-size:clamp(25px,2.8vw,32px)}
+.subsec{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.subh{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:18px;font-weight:700;color:var(--g8);margin-top:10px}
+html[lang=en] .subh{font-size:21px}
+.subh>i{width:5px;height:22px;border-radius:3px;background:linear-gradient(var(--gold3),var(--gold));flex:0 0 auto}
+.try{display:inline-flex;align-items:center;gap:5px;font:700 11.5px var(--fb);color:#fff;background:linear-gradient(120deg,#c79a3d,var(--gold));padding:4px 10px;border-radius:12px;animation:tryp 2.4s ease-in-out infinite;white-space:nowrap}
+.try .ic{font-size:14px}
+@keyframes tryp{50%{box-shadow:0 0 0 5px rgba(184,145,58,.18)}}
+.guide{border-radius:20px;padding:18px;background:linear-gradient(160deg,var(--g8),var(--g6));color:#fff;margin-bottom:26px;position:relative;overflow:hidden}
+.guide h3{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:20px;color:var(--gold3);margin-bottom:12px}
+html[lang=en] .guide h3{font-size:24px}
+.guide ol{list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:g}
+.guide li{display:flex;gap:10px;font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.92)}
+.guide li::before{counter-increment:g;content:counter(g);flex:0 0 auto;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(242,207,115,.2);color:var(--gold3);font:800 13px var(--fn);margin-top:1px}
+.scue{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:16px;font-size:13px;font-weight:700;color:var(--gold3)}
+.scue .ic{font-size:26px;animation:bob2 1.4s ease-in-out infinite}
+@keyframes bob2{50%{transform:translateY(6px)}}
+.endnav{display:flex;justify-content:center;margin-top:10px}
 .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;position:sticky;top:-18px;z-index:2;background:linear-gradient(var(--ivory) 80%,rgba(250,248,242,0));padding-top:4px;margin-top:-4px}
 .tabs::-webkit-scrollbar{display:none}
 .tabs button{flex:0 0 auto;height:36px;padding:0 14px;border-radius:18px;font-size:13px;font-weight:600;color:var(--g8);background:#fff;border:1px solid var(--line);white-space:nowrap;transition:all .2s}
@@ -776,7 +802,8 @@ const EARTH='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYG
 
 /* ================= UI STRINGS ================= */
 const U={
-ar:{explore:'ابدأ الاستكشاف',free:'تجوّل على الجسر',skip:'تخطي المقدمة',hint:'اضغط على أي محطة على الجسر لاستكشافها',home:'الجسر',tour:'جولة تلقائية',tourStop:'إيقاف الجولة',
+ar:{explore:'ابدأ قراءة الدراسة',free:'تجوّل على الكرة',try:'جرّب',reading:'تابع القراءة',
+ guide:{h:'كيف تقرأ هذه المنصة',t:['مرّر للأسفل لقراءة الدراسة كاملة بالترتيب — الكرة الأرضية تتحرك معك من الرياض إلى بكين.','للانتقال السريع اضغط على الأشرطة أعلى اللوحة، أو على أرقام المحطات فوق الجسر، أو زرّي «التالية» و«السابقة».','العناصر المعلّمة بـ «جرّب» تفاعلية: حرّك المؤشرات واضغط الأزرار لترى النتائج مباشرة.','غيّر اللغة من الأعلى في أي وقت، وزر ▶ يشغّل جولة تلقائية، وزر ✕ يعيدك للكرة الأرضية.'],scroll:'مرّر للأسفل للبدء'},skip:'تخطي المقدمة',hint:'اضغط على أي محطة على الجسر للانتقال إلى قسمها',home:'الجسر',tour:'جولة تلقائية',tourStop:'إيقاف الجولة',
  prev:'السابقة',next:'التالية',stn:'المحطة',introK:'منصة تفاعلية · دراسة جدوى · أكتوبر 2026',tourOn:'الجولة التلقائية تعمل — المس الشاشة لإيقافها',
  st:['الملخص التنفيذي','الفرصة والسوق','الشرائح المستهدفة','نموذج العمل','المنتجات','الإطار النظامي','معايير الائتمان','رحلة العميل','المالية والعوائد','الشراكة والحوكمة','خطة التنفيذ','الخطوات التالية'],
  tProd:['منتج «نمو»','منتج «أصول»','الورقة الرابحة'],tCred:['المعايير','محاكي الأهلية'],
@@ -795,7 +822,8 @@ ar:{explore:'ابدأ الاستكشاف',free:'تجوّل على الجسر',sk
  part:{hint:'اضغط على أحد الطرفين لإبراز مساهمته',cum:'أرباح تراكمية متوقعة للشريك الصيني خلال 5 سنوات'},
  mdl:{files:'ملفات مؤهلة',money:'التمويل المباشر',fee:'رسوم 2%'}
 },
-en:{explore:'Start exploring',free:'Roam the bridge',skip:'Skip intro',hint:'Tap any station on the bridge to explore it',home:'The bridge',tour:'Auto tour',tourStop:'Stop tour',
+en:{explore:'Start reading the study',free:'Roam the globe',try:'Try it',reading:'Continue reading',
+ guide:{h:'How to read this platform',t:['Scroll down to read the full study in order — the globe follows you from Riyadh to Beijing.','To jump ahead, tap the bars at the top of the panel, the station numbers on the bridge, or the Next / Previous buttons.','Anything marked “Try it” is interactive: move the sliders and tap the buttons to see results instantly.','Switch language at the top at any time; ▶ starts an automatic tour and ✕ returns you to the globe.'],scroll:'Scroll down to begin'},skip:'Skip intro',hint:'Tap any station on the bridge to jump to its section',home:'The bridge',tour:'Auto tour',tourStop:'Stop tour',
  prev:'Previous',next:'Next',stn:'Station',introK:'Interactive platform · Feasibility study · October 2026',tourOn:'Auto tour running — touch the screen to stop',
  st:['Executive summary','Opportunity & market','Target segments','Business model','Products','Regulatory framework','Credit criteria','Client journey','Financials & returns','Partnership & governance','Execution plan','Next steps'],
  tProd:['Nomu','Osoul','The winning card'],tCred:['Criteria','Eligibility simulator'],
@@ -814,7 +842,8 @@ en:{explore:'Start exploring',free:'Roam the bridge',skip:'Skip intro',hint:'Tap
  part:{hint:'Tap either partner to highlight its contribution',cum:'Expected cumulative profit to the Chinese partner over 5 years'},
  mdl:{files:'Qualified files',money:'Direct financing',fee:'2% fee'}
 },
-zh:{explore:'开始探索',free:'自由浏览桥梁',skip:'跳过片头',hint:'点击桥上任意站点进行探索',home:'桥梁',tour:'自动导览',tourStop:'停止导览',
+zh:{explore:'开始阅读研究',free:'自由浏览地球',try:'试一试',reading:'继续阅读',
+ guide:{h:'阅读指南',t:['向下滑动即可按顺序阅读完整研究——地球会随您从利雅得移动到北京。','如需跳转，可点击面板顶部的进度条、桥上的站点编号，或"上一站/下一站"按钮。','标有"试一试"的内容均可互动：拖动滑块、点击按钮即可即时查看结果。','可随时在顶部切换语言；▶ 开始自动导览，✕ 返回地球视图。'],scroll:'向下滑动开始'},skip:'跳过片头',hint:'点击桥上任意站点进行探索',home:'桥梁',tour:'自动导览',tourStop:'停止导览',
  prev:'上一站',next:'下一站',stn:'站点',introK:'互动平台 · 可行性研究 · 2026年10月',tourOn:'自动导览进行中——触摸屏幕即可停止',
  st:['执行摘要','市场机遇','目标客群','商业模式','产品矩阵','监管框架','信贷标准','客户旅程','财务与回报','合资与治理','实施路线图','后续步骤'],
  tProd:['Numu 成长贷','Usul 资产贷','王牌优势'],tCred:['标准','资质模拟器'],
@@ -847,7 +876,7 @@ target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx
 cpu:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',play:'<path d="M7 4l13 8-13 8z"/>',pause:'<path d="M8 5v14M16 5v14"/>',
 reset:'<path d="M3 12a9 9 0 109-9 9 9 0 00-7 3.3M3 4v5h5"/>',scale:'<path d="M12 3v18M6 21h12M4 7h16M7 7l-3 7c0 1.7 1.3 2.5 3 2.5s3-.8 3-2.5zM17 7l-3 7c0 1.7 1.3 2.5 3 2.5s3-.8 3-2.5z"/>',
 flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',vol:'<path d="M4 9h4l5-4v14l-5-4H4zM16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/>',mute:'<path d="M4 9h4l5-4v14l-5-4H4zM17 9l5 6M22 9l-5 6"/>',
-arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',door:'<path d="M14 3h5v18h-5M10 17l5-5-5-5M15 12H3"/>'
+arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',down:'<path d="M12 4v15M6 13l6 6 6-6"/>',hand:'<path d="M9 11V5a2 2 0 014 0v6M13 10a2 2 0 014 0v2M17 11a2 2 0 014 0v4a7 7 0 01-7 7h-1a7 7 0 01-6-3.4L4.6 14a2 2 0 013.4-2L9 13.5"/>',book:'<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5M8 7h7"/>',door:'<path d="M14 3h5v18h-5M10 17l5-5-5-5M15 12H3"/>'
 };
 const ic=(n,c='')=>`<svg class="ic ${c}" viewBox="0 0 24 24">${IC[n]}</svg>`;
 const LOGO='<g fill="none" stroke-linecap="round"><path d="M2 46h60" stroke="#2EBD85" stroke-width="3.2"/><path d="M20 10v42M44 10v42" stroke="#D9B865" stroke-width="3.2"/><path d="M20 13L5 46M20 13L12 46M20 13L28 46M20 13L34 46M44 13L30 46M44 13L36 46M44 13L52 46M44 13L59 46" stroke="#D9B865" stroke-width="1.2" opacity=".9"/><circle cx="20" cy="10" r="2" fill="#F2CF73"/><circle cx="44" cy="10" r="2" fill="#F2CF73"/></g>';
@@ -912,7 +941,7 @@ function layout(){
   layoutMode=(W>=900||(W>H&&H<560))?'side':'sheet';
   document.body.classList.toggle('side',layoutMode==='side');document.body.classList.toggle('sheet',layoutMode==='sheet');
   P=layoutMode==='side'?(W>=900?Math.min(580,Math.round(W*.42)):Math.round(W*.54)):0;
-  SHh=layoutMode==='sheet'?Math.round(H*.6):0;
+  SHh=layoutMode==='sheet'?Math.round(H*(W<600?.71:.64)):0;
   document.documentElement.style.setProperty('--P',P+'px');document.documentElement.style.setProperty('--SH',SHh+'px');
   const w=$('#world');
   if(layoutMode==='side'){w.style.width=(W+P)+'px';w.style.height=H+'px';w.style.left=(-P/2)+'px';w.style.top='0px';}
@@ -1025,21 +1054,34 @@ $('#freeBtn').onclick=()=>{sfx.click();leaveCard(false);};
 function toOverview(){stopTour(false);mode='overview';document.body.classList.remove('station');document.body.classList.add('overview');
   shift();labelMarkers();rings();crumbs();
   if(G){G.pointOfView({...OV,altitude:alt(1.7)},1600);G.controls().autoRotate=false;}}
+let built=false,flyT=null,progScroll=false;
+function fly(i,ms){if(!G||!STN[i])return;const s=STN[i];G.pointOfView({lat:s.lat-(layoutMode==='sheet'?0:1),lng:s.lng,altitude:alt(1.05)},ms);}
 function openStation(i,fromTour){
   if(i<0||i>11)return;if(!fromTour)stopTour(false);
-  const first=mode!=='station';cur=i;mode='station';seen.add(i);
+  const first=mode!=='station';mode='station';
   document.body.classList.add('station');document.body.classList.remove('overview');shift();
-  sfx.open();
-  if(G){const s=STN[i];G.pointOfView({lat:s.lat-(layoutMode==='sheet'?0:1),lng:s.lng,altitude:alt(1.05)},first?1700:1300);}
-  labelMarkers();rings();crumbs();renderPanel();}
+  if(!built)buildReader();
+  if(first)sfx.open();
+  setCur(i,true);fly(i,first?1700:1300);
+  const sec=$('#sec'+i),ps=$('#ps');if(!sec)return;
+  progScroll=true;clearTimeout(openStation.t);openStation.t=setTimeout(()=>progScroll=false,first?300:1100);
+  const top=sec.offsetTop-6;
+  if(first&&i===0&&ps.scrollTop<10){}else ps.scrollTo({top,behavior:first?'auto':'smooth'});}
+function setCur(i,silent){if(i===cur&&!silent&&mode==='station')return;const changed=i!==cur;cur=i;seen.add(i);
+  $('#pChip').textContent=String(i+1).padStart(2,'0');$('#pChip').style.background=CHIPC[SCOL[i]]||'#0B3D2E';
+  $('#pIdx').textContent=`${T.stn} ${i+1} / 12`;$('#pTitle').textContent=T.st[i];
+  $$('#pDots button').forEach((b,j)=>{b.className=j===i?'on':seen.has(j)?'seen':'';});
+  $('#pPrev').disabled=i===0;$('#pNextT').textContent=i===11?L.ui.brand:T.next;
+  labelMarkers();rings();crumbs();
+  if(changed&&!silent){sfx.blip(i);clearTimeout(flyT);flyT=setTimeout(()=>fly(i,1400),180);}}
 function crumbs(){const c=$('#crumbs');let h='';
   if(mode==='station')h=`<span class="sep">›</span><button data-c="home">${T.home}</button><span class="sep">›</span><button class="cur">${String(cur+1).padStart(2,'0')} · ${T.st[cur]}</button>`;
   c.innerHTML=h;const hb=c.querySelector('[data-c=home]');if(hb)hb.onclick=()=>{sfx.click();toOverview();};}
 function dock(){$('#dock').innerHTML=T.st.map((n,i)=>`<button data-i="${i}" class="${i===0?'sa':i===11?'cn':''}"><b>${i+1}</b>${n}</button>`).join('');
   $$('#dock button').forEach(b=>b.onclick=()=>{sfx.click();openStation(+b.dataset.i);});}
 $('#pClose').onclick=()=>{sfx.click();toOverview();};
-$('#pPrev').onclick=()=>openStation(cur-1);
-$('#pNext').onclick=()=>{if(cur===11){toOverview();return;}openStation(cur+1);};
+$('#pPrev').onclick=()=>{sfx.click();openStation(cur-1);};
+$('#pNext').onclick=()=>{if(cur===11){sfx.click();toOverview();return;}sfx.click();openStation(cur+1);};
 addEventListener('keydown',e=>{
   if(mode==='gate'){const m={'1':'ar','2':'en','3':'zh'};if(m[e.key]){setLang(m[e.key]);startIntro();}return;}
   if(mode==='intro'&&(e.key==='Escape'||e.key===' ')){e.preventDefault();endIntro();return;}
@@ -1073,7 +1115,7 @@ function setLang(l){lang=l;L=D[l];T=U[l];document.documentElement.lang=l;documen
   $('#tourBtn').innerHTML=ic(tourT?'pause':'play')+`<span class="lbl" id="tourLbl">${tourT?T.tourStop:T.tour}</span>`;
   $('#lsw').innerHTML=[['ar','ع'],['en','EN'],['zh','中']].map(([k,t])=>`<button data-l="${k}" class="${k===l?'on':''}">${t}</button>`).join('');
   $$('#lsw button').forEach(b=>b.onclick=()=>{if(b.dataset.l!==lang){sfx.click();setLang(b.dataset.l);}});
-  dock();labelMarkers();crumbs();shift();if(mode==='station')renderPanel(true);}
+  dock();labelMarkers();crumbs();shift();if(mode==='station')renderPanel();else built=false;}
 
 /* ================= PANEL HELPERS ================= */
 const fx=(x,d)=>Number(x).toFixed(d);
@@ -1081,10 +1123,9 @@ const fmt=(x,d=0)=>Number(x).toLocaleString('en-US',{minimumFractionDigits:d,max
 const rv=(h,d)=>`<div class="rv" style="--d:${d}s">${h}</div>`;
 const card=(h,p,cls='',icon='',ib='',d=.1)=>`<div class="card ${cls} rv" style="--d:${d}s"><h4>${icon?`<span class="ib ${ib}">${ic(icon)}</span>`:''}${h}</h4><p>${p}</p></div>`;
 const tbl=(heads,rows,o={})=>`<div class="tw rv" style="--d:${o.d||.1}s"><table class="tb2 ${o.cls||''}"><thead><tr>${heads.map((h,i)=>`<th class="${(o.hc||[])[i]||''}">${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r,ri)=>`<tr class="${o.tot&&ri===rows.length-1?'tot':''}">${r.map((c,ci)=>`<td class="${(o.cc||[])[ci]||''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-const tabs=(labels,panes)=>`<div class="tabs rv" style="--d:.05s">${labels.map((l,i)=>`<button data-t="${i}" class="${i?'':'on'}">${l}</button>`).join('')}</div><div>${panes.map((p,i)=>`<div class="pane ${i?'':'on'}" data-p="${i}"><div class="stack" style="margin-top:12px">${p}</div></div>`).join('')}</div>`;
-function wireTabs(root,onShow){root.querySelectorAll('.tabs').forEach(tb=>{const bs=tb.querySelectorAll('button'),ps=tb.nextElementSibling.children;
-  bs.forEach(b=>b.onclick=()=>{sfx.tab();bs.forEach(x=>x.classList.toggle('on',x===b));Array.from(ps).forEach(p=>{const on=p.dataset.p===b.dataset.t;p.classList.toggle('on',on);if(on){p.classList.remove('live');void p.offsetWidth;requestAnimationFrame(()=>p.classList.add('live'));countUp(p);onShow&&onShow(+b.dataset.t,p);}});
-    b.scrollIntoView({inline:'nearest',block:'nearest',behavior:'smooth'});});});}
+const tryB=()=>`<span class="try">${ic('hand')}${T.try}</span>`;
+const tabs=(labels,panes,tr=[])=>panes.map((p,i)=>`<div class="subsec"><div class="subh rv"><i></i><span>${labels[i]}</span>${tr.includes(i)?tryB():''}</div>${p}</div>`).join('');
+function wireTabs(){}
 function countUp(root){root.querySelectorAll('[data-count]').forEach(el=>{const v=+el.dataset.count,d=+el.dataset.dec,t0=performance.now(),dur=1500;
   const st=n=>{const p=Math.min(1,(n-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=fmt(v*e,d);if(p<1){sfx.tick();requestAnimationFrame(st);}};el.textContent=fmt(0,d);setTimeout(()=>requestAnimationFrame(st),350);});}
 function rng(id,label,min,max,step,val,unit=''){return `<div class="sl"><div class="t"><span>${label}</span><output id="${id}o"></output></div><input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}"></div>`;}
@@ -1153,7 +1194,7 @@ S[6]={h:()=>{const s=L.s9,e=T.el;
    <div id="elO" class="stack" style="display:none">${rng('oLease',e.lease,0,10,.5,5)}${rng('oDs',e.dscr,.8,2.5,.05,1.3)}${rng('oVal',e.val,10,150,1,40)}${rng('oAmt',e.amt,5,80,1,24)}${yn('oSim',e.simah)}</div>
    <div class="chk2" id="elC"></div><div class="verdict" id="elV"></div><div class="out" id="elF"></div>
    <p style="font-size:12px;color:var(--mute)">${e.note}</p>`;
-  return `<div class="stack">${rv(`<p class="lead">${s.lead}</p>`,.02)}${tabs(T.tCred,[tbl(s.heads,s.rows,{hc:['','','y']}),sim])}</div>`;},
+  return `<div class="stack">${rv(`<p class="lead">${s.lead}</p>`,.02)}${tabs(T.tCred,[tbl(s.heads,s.rows,{hc:['','','y']}),sim],[1])}</div>`;},
  m:root=>{const e=T.el;let prod=0,lastOk=null;
   const g=id=>+root.querySelector('#'+id).value;
   const fmtO={eRev:v=>v+' '+T.mS,eAud:v=>v+' '+e.yr,eDs:v=>fx(v,2)+'x',eAmt:v=>v+' '+T.mS,oLease:v=>v+' '+e.yr,oDs:v=>fx(v,2)+'x',oVal:v=>v+' '+T.mS,oAmt:v=>v+' '+T.mS};
@@ -1174,7 +1215,7 @@ S[7]={h:()=>{const s=L.s10;return `<div class="stack">
   <div class="timebar rv" style="--d:.05s">${ic('clock')}<span>${s.time}</span><span class="ln"></span>${ic('coins')}</div>
   <div class="jt rv" style="--d:.1s" id="jt"><i class="bar" id="jbar"></i>${s.steps.map((_,i)=>`<button data-i="${i}" class="${i===6?'fee':''}">${i+1}</button>`).join('')}</div>
   <div class="jd" id="jd"></div>
-  <button class="btn au rv" style="--d:.2s" id="jPlay">${ic('play')}<span>${T.jr.play}</span></button>
+  <div class="rv" style="--d:.2s;display:flex;align-items:center;gap:10px;flex-wrap:wrap"><button class="btn au" id="jPlay">${ic('play')}<span>${T.jr.play}</span></button>${tryB()}</div>
   <div class="chev">${s.steps.map((x,i)=>`<div class="card ${i===6?'hot':''} rv" style="--d:${.25+i*.04}s"><span class="k">${i+1}</span><div><h4>${x[0]}</h4><p>${x[1]}</p></div></div>`).join('')}</div></div>`;},
  m:root=>{const s=L.s10;let k=0,pt=null;
   const show=i=>{k=i;root.querySelectorAll('#jt button').forEach((b,j)=>{b.classList.toggle('on',j===i);b.classList.toggle('done',j<i);});
@@ -1219,7 +1260,7 @@ S[8]={h:()=>{const s11=L.s11,s12=L.s12,s13=L.s13,s14=L.s14,s15=L.s15,s16=L.s16;
   const sm=T.sim;
   const sim=`${rng('sD',sm.deals,5,80,1,45)}${rng('sA',sm.avg,10,30,1,20)}${rng('sF',sm.fee,15,20,1,20)}${rng('sX',sm.fixed,3,8,.1,5.8)}
    <div class="out" id="sO"></div><button class="btn gh" id="sR">${ic('reset')}<span>${sm.reset}</span></button><p style="font-size:12px;color:var(--mute);line-height:1.6">${sm.note}</p>`;
-  return tabs(T.tFin,[proj,ass,scn,cst,be,inv,sim]);},
+  return tabs(T.tFin,[proj,ass,scn,cst,be,inv,sim],[0,2,4,6]);},
  m:root=>{const s11=L.s11,s13=L.s13,sm=T.sim;
   const det=i=>{root.querySelectorAll('#fBars .grp').forEach((g,j)=>g.classList.toggle('on',j===i));
    root.querySelector('#fDet').innerHTML=`<div><small>${s11.lg[0]}</small><b>${fx(REV[i],1)}</b></div><div><small>${s11.lg[1]}</small><b>${CST[i]}</b></div><div class="n ${NET[i]<0?'neg':''}"><small>${s11.lg[2]}</small><b>${NET[i]<0?'−':'+'}${Math.abs(NET[i])}</b></div><div><small>${T.deals}</small><b>${DEALS[i]}</b></div><div style="grid-column:span 2"><small>${T.vol}</small><b>${L.s12.vols[i]}</b></div>`;};
@@ -1249,18 +1290,18 @@ S[8]={h:()=>{const s11=L.s11,s12=L.s12,s13=L.s13,s14=L.s14,s15=L.s15,s16=L.s16;
 S[9]={h:()=>{const s=L.s17,r=L.s18;
   const st=`${rv(`<p class="lead">${s.lead}</p>`,.02)}
    <div class="split rv" id="spl" style="--d:.08s"><button class="cn" data-f="cn"><b>50%</b><span>${s.heads[1]}</span></button><button class="sa" data-f="sa"><b>50%</b><span>${s.heads[2]}</span></button></div>
-   ${rv(`<p style="font-size:12px;color:var(--mute);text-align:center">${T.part.hint}</p>`,.1)}
+   ${rv(`<p style="font-size:12.5px;color:var(--g8);font-weight:600;text-align:center">👆 ${T.part.hint}</p>`,.1)}
    <div class="stack" id="prows" style="gap:8px"><div class="phd"><span></span><span>${s.heads[1]}</span><span>${s.heads[2]}</span></div>${s.rows.map((x,i)=>`<div class="prow rv" style="--d:${.12+i*.05}s"><div>${x[0]}</div><div class="c1">${x[1]}</div><div class="c2">${x[2]}</div></div>`).join('')}</div>`;
   const rt=`<div class="kpi rv" style="--d:.05s"><div class="v">≈<span data-count="${lang==='zh'?1200:12}" data-dec="0">0</span></div><div class="u">${lang==='zh'?'万里亚尔':L.s1.kpis[1].u}</div><div class="l">${T.part.cum}</div></div>
    ${r.rets.map((x,i)=>card(x[0],x[1],i===0?'g':'',['coins','chart','link'][i],['','y','r'][i],.12+i*.07)).join('')}`;
   const gv=r.govs.map((x,i)=>card(x[0],x[1],'',['lock','shield','key','door'][i],'y',.05+i*.07)).join('');
-  return `<div class="stack">${tabs(T.tPart,[st,rt,gv])}</div>`;},
+  return `<div class="stack">${tabs(T.tPart,[st,rt,gv],[0])}</div>`;},
  m:root=>{const sp=root.querySelector('#spl'),pr=root.querySelector('#prows');let f='';
   sp.querySelectorAll('button').forEach(b=>b.onclick=()=>{f=f===b.dataset.f?'':b.dataset.f;sfx.blip(b.dataset.f==='cn'?3:6);['f-cn','f-sa'].forEach(c=>{sp.classList.remove(c);pr.classList.remove(c);});if(f){sp.classList.add('f-'+f);pr.classList.add('f-'+f);}});}};
 /* 11 Timeline */
 S[10]={h:()=>{const s=L.s19,P=m=>`${m/12*100}%`;return `<div class="stack">
   ${rv(`<p class="lead">${s.lead}</p>`,.02)}
-  <div class="tlc rv" style="--d:.06s"><button class="btn au" id="tP">${ic('play')}</button><input type="range" id="tM" min="0" max="12" step=".5" value="7"><output id="tO"></output></div>
+  <div class="rv" style="--d:.04s">${tryB()}</div><div class="tlc rv" style="--d:.06s"><button class="btn au" id="tP">${ic('play')}</button><input type="range" id="tM" min="0" max="12" step=".5" value="7"><output id="tO"></output></div>
   <div class="card gantt rv" style="--d:.1s">
    <div class="g-row" style="min-height:24px"><div class="g-lab" style="color:var(--mute);font-size:11px">${s.m}</div><div class="g-ax">${Array.from({length:13},(_,m)=>`<span class="${m===7?'m7':''}" style="inset-inline-start:${P(m)}">${m}</span>`).join('')}</div></div>
    ${s.rows.map((r,i)=>{const[a,b]=TL[i],ms=a===b;return `<div class="g-row" data-i="${i}"><div class="g-lab"><i class="st"></i>${r}</div><div class="g-tr"><i class="m7"></i><i class="now"></i>${ms?'<i class="g-dia"></i>':`<div class="g-bar ${i===7?'last':''}" style="inset-inline-start:${P(a)};width:${P(b-a)}"><i></i></div>`}</div></div>`;}).join('')}
@@ -1288,7 +1329,7 @@ S[10]={h:()=>{const s=L.s19,P=m=>`${m/12*100}%`;return `<div class="stack">
 S[11]={h:()=>{const s=L.s20,t=L.s21,ck=store.get('sb_chk',{});
   const li=(a,p)=>`<div class="cl">${a.map((x,i)=>`<label><input type="checkbox" data-k="${p}${i}" ${ck[p+i]?'checked':''}><span class="bx">${ic('check')}</span><span>${x}</span></label>`).join('')}</div><div class="prg"><span>${T.nx.prog}</span><div class="t"><i data-pg="${p}"></i></div><span data-pt="${p}"></span></div>`;
   return `<div class="stack">
-   <div class="card r rv" style="--d:.05s"><h4><span class="ib r">${ic('bank')}</span>${s.ch}</h4>${li(s.cn,'c')}</div>
+   <div class="rv">${tryB()}</div><div class="card r rv" style="--d:.05s"><h4><span class="ib r">${ic('bank')}</span>${s.ch}</h4>${li(s.cn,'c')}</div>
    <div class="card g rv" style="--d:.12s"><h4><span class="ib">${ic('users')}</span>${s.sh}</h4>${li(s.sa,'s')}</div>
    ${rv(`<p style="font-size:11.5px;color:var(--mute);text-align:center">${T.nx.saved}</p>`,.15)}
    <div class="thanks rv" style="--d:.2s"><svg viewBox="0 0 64 64">${LOGO}</svg><h3>${t.h}</h3><div class="tri"><span>شكراً</span>·<span>Thank you</span>·<span>谢谢</span></div><p>${t.l}</p><div class="by">${t.by}</div><div class="cr">${L.ui.credit}</div></div></div>`;},
@@ -1298,22 +1339,26 @@ S[11]={h:()=>{const s=L.s20,t=L.s21,ck=store.get('sb_chk',{});
   root.querySelectorAll('.cl input').forEach(c=>c.addEventListener('change',()=>{c.checked?sfx.blip(5):sfx.tab();upd(true);}));upd(false);}};
 
 /* ================= RENDER PANEL ================= */
-let curRoot=null;
-function renderPanel(keepScroll){
-  if(curRoot&&curRoot._stop)curRoot._stop();
-  const ps=$('#ps'),i=cur,st=S[i];
-  $('#pChip').textContent=String(i+1).padStart(2,'0');$('#pChip').style.background=CHIPC[SCOL[i]]||'#0B3D2E';
-  $('#pIdx').textContent=`${T.stn} ${i+1} / 12`;$('#pTitle').textContent=T.st[i];
-  $('#pDots').innerHTML=T.st.map((n,j)=>`<button data-i="${j}" title="${n}" class="${j===i?'on':seen.has(j)?'seen':''}" aria-label="${n}"></button>`).join('');
+function buildReader(){
+  const ps=$('#ps');built=true;
+  const guide=`<div class="guide"><h3>${ic('book')}${T.guide.h}</h3><ol>${T.guide.t.map(x=>`<li><span>${x}</span></li>`).join('')}</ol><div class="scue">${ic('down')}<span>${T.guide.scroll}</span></div></div>`;
+  ps.innerHTML=guide+S.map((st,i)=>`<section class="rsec" id="sec${i}" data-i="${i}"><div class="rhead"><span class="chip" style="background:${CHIPC[SCOL[i]]}">${String(i+1).padStart(2,'0')}</span><div><small>${T.stn} ${i+1} / 12</small><h2>${T.st[i]}</h2></div></div><div class="stack">${st.h()}</div>
+   ${i===11?'':`<div class="endnav"><button class="btn gh" data-nx="${i+1}">${T.next}: ${T.st[i+1]}${ic('down')}</button></div>`}</section>`).join('');
+  S.forEach((st,i)=>{if(st.m)st.m($('#sec'+i));});
+  ps.querySelectorAll('[data-nx]').forEach(b=>b.onclick=()=>{sfx.click();openStation(+b.dataset.nx);});
+  $('#pDots').innerHTML=T.st.map((n,j)=>`<button data-i="${j}" title="${n}" aria-label="${n}"></button>`).join('');
   $$('#pDots button').forEach(b=>b.onclick=()=>{sfx.click();openStation(+b.dataset.i);});
-  $('#pPrev').disabled=i===0;$('#pNextT').textContent=i===11?L.ui.brand:T.next;
-  const y=ps.scrollTop;ps.classList.remove('live');ps.innerHTML=`<div class="stack">${st.h()}</div>`;curRoot=ps;
-  wireTabs(ps,st.show);if(st.m)st.m(ps);
-  ps.querySelectorAll('.pane.on').forEach(p=>p.classList.add('live'));
-  ps.scrollTop=keepScroll?y:0;
-  requestAnimationFrame(()=>requestAnimationFrame(()=>ps.classList.add('live')));
-  countUp(ps.querySelector('.pane.on')||ps);
+  if(reader.io)reader.io.disconnect();
+  reader.io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!e.target.classList.contains('live')){const t=e.target;t.classList.add('live');countUp(t);
+     t.querySelectorAll('circle.s').forEach(c=>{const C=2*Math.PI*70;setTimeout(()=>c.setAttribute('stroke-dasharray',`${c.dataset.len} ${C}`),120);});}}),{root:ps,threshold:0,rootMargin:'0px 0px -12% 0px'});
+  ps.querySelectorAll('.rsec,.subsec').forEach(x=>reader.io.observe(x));
 }
+const reader={io:null};
+$('#ps').addEventListener('scroll',()=>{if(mode!=='station')return;const ps=$('#ps'),line=ps.scrollTop+ps.clientHeight*.35;let k=0;
+  ps.querySelectorAll('.rsec').forEach((x,i)=>{if(x.offsetTop<=line)k=i;});
+  if(ps.scrollTop+ps.clientHeight>=ps.scrollHeight-4)k=11;
+  if(k!==cur){if(progScroll){setCur(k,true);}else setCur(k);}},{passive:true});
+function renderPanel(){const y=$('#ps').scrollTop,c=cur;built=false;buildReader();setCur(c,true);$('#ps').scrollTop=$('#sec'+c)?$('#sec'+c).offsetTop-6:y;}
 
 /* ================= BOOT ================= */
 setLang('ar');
